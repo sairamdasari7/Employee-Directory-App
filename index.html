@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Employee Directory</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Employee Directory</h1>
+    <div class="toolbar">
+      <input type="text" id="searchBar" placeholder="Search by name or email..." />
+      <button onclick="toggleFilterPanel()">Filter</button>
+      <select id="sortBy" onchange="sortEmployees()">
+        <option value="">Sort By</option>
+        <option value="firstName">First Name</option>
+        <option value="department">Department</option>
+      </select>
+      <a href="form.html" class="add-button">Add Employee</a>
+    </div>
+  </header>
+
+  <div id="filterPanel" class="filter hidden">
+    <h3>Filter</h3>
+    <input type="text" id="filterName" placeholder="First Name" />
+    <input type="text" id="filterDepartment" placeholder="Department" />
+    <input type="text" id="filterRole" placeholder="Role" />
+    <button onclick="applyFilters()">Apply</button>
+    <button onclick="resetFilters()">Reset</button>
+  </div>
+
+  <main id="employeeList"></main>
+
+  <div class="pagination">
+    <label>Items per page:</label>
+    <select id="pagination" onchange="changePageSize()">
+      <option value="10">10</option>
+      <option value="25">25</option>
+      <option value="50">50</option>
+      <option value="100">100</option>
+    </select>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
